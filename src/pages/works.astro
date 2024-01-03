@@ -1,0 +1,22 @@
+---
+import MainLayout from "../layouts/mainLayout.astro";
+const posts = await Astro.glob("./posts/*.mdx");
+---
+
+<MainLayout title="Works" category="works">
+
+    <section>
+        <h2>開発 <span class="font-thin sub-text"> - Works</span></h2>
+        <h3>工事中</h3>
+        <p>工事中です....</p>
+
+        <!-- <h3>Osansaku</h3>
+
+        <h3>UEC Dasboard</h3>
+
+        <h3>きまたま勉強日誌</h3>
+
+        <h3>個人サイト</h3> -->
+
+    </section>
+</MainLayout>

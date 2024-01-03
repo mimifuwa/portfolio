@@ -1,0 +1,25 @@
+---
+const { title, category } = Astro.props.frontmatter || Astro.props;
+
+import Header from "./header/header.astro";
+import Footer from "./footer/footer.astro";
+
+import "../styles/global.scss"
+---
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title ? title + " - みみちゃん" : "Mimi"}</title>
+    <style lang="scss" />
+</head>
+<body class="flex flex-col px-5 min-h-full">
+        <Header category={category}/>
+        <main class="flex-grow container max-w-screen-md mx-auto py-7">
+            <slot />
+        </main>
+        <Footer />
+    </div>
+</body>
+
+</html>

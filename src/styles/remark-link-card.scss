@@ -1,0 +1,58 @@
+.rlc-container {
+  display: flex;
+
+  align-items: center;
+
+  text-decoration: none;
+
+  border-radius: 0.5rem;
+  overflow: hidden;
+
+  border: 1px solid $border-color;
+
+  margin-bottom: 1rem;
+
+  .rlc-info {
+    width: 100%;
+    padding: 0.75rem;
+
+    .rlc-title {
+      font-weight: bold;
+
+      margin-bottom: 0.5rem;
+    }
+
+    .rlc-description {
+      display: none !important;
+      font-size: 0.75rem;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+
+      color: $text-color;
+
+      margin-bottom: 0.5rem;
+    }
+
+    .rlc-url-container {
+      display: flex;
+
+      font-size: 0.75rem;
+
+      color: $text-color;
+
+      .rlc-url {
+        margin-left: 0.5rem;
+
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+
+  .rlc-image-container {
+    display: none;
+  }
+}
