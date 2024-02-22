@@ -5,6 +5,8 @@
 @import "./variables";
 @import "./remark-link-card.scss";
 
+@import "./SourceHanSansJP.scss";
+
 html {
   height: 100%;
 }
@@ -13,6 +15,8 @@ body {
   background-color: $background-color;
 
   color: $text-color;
+
+  font-family: "SourceHanSansJP";
 }
 
 h1 {
@@ -64,7 +68,7 @@ h2 {
 
     margin-right: 0.5rem;
 
-    background-image: url("/heading2.png");
+    background-image: url("/images/heading/heading-2.png");
     background-position: center center;
     background-size: cover;
   }

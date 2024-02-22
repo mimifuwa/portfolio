@@ -2,6 +2,29 @@
 import "./header.scss";
 
 const { type } = Astro.props;
+
+const date = new Date();
+const month = date.getMonth() + 1;
+const day = date.getDate();
+
+let headerImageName = "";
+
+if(month === 1 && (day <= 3)){
+    headerImageName = "newyear";
+}else if(month === 12 && (day === 24 || day === 25)){
+    headerImageName = "xmas";
+}else if(month === 10 && day === 31){
+    headerImageName = "halloween";
+}else if(3 <= month && month <= 5){
+    headerImageName = "spring";
+}else if(6 <= month && month <= 8){
+    headerImageName = "summer";
+}else if(9 <= month && month <= 11){
+    headerImageName = "fall";
+}else{
+    headerImageName = "winter";
+}
+
 ---
 
 <header>
@@ -9,7 +32,7 @@ const { type } = Astro.props;
         <div class="flex w-full flex-col items-center justify-center py-3">
             <div class="flex w-full h-20 items-center justify-center bg-primary">
                 <a href="#" class="header-logo">
-                    <img src="/header.png" alt="" class="image">
+                    <img src=`/images/header/${headerImageName}.png` alt="" class="image">
                     みみの小屋
                 </a>
             </div>
