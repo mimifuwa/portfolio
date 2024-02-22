@@ -1,22 +1,26 @@
 ---
-const { title, category } = Astro.props.frontmatter || Astro.props;
+const { title, subtitle, type } = Astro.props.frontmatter || Astro.props;
 
 import Header from "./header/header.astro";
 import Footer from "./footer/footer.astro";
 
-import "../styles/global.scss"
+import "../styles/global.scss";
+
 ---
 <html lang="ja">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>{title ? title + " - みみちゃん" : "Mimi"}</title>
+    <title>{title ? title + " - みみの小屋" : "みみの小屋"}</title>
     <style lang="scss" />
 </head>
 <body class="flex flex-col px-5 min-h-full">
-        <Header category={category}/>
+        <Header type={type}/>
         <main class="flex-grow container max-w-screen-md mx-auto py-7">
-            <slot />
+            <article class="post">
+                {type === "top" ? "" : (<h1>{title}<span>{subtitle}</span></h1>)}
+                <slot />
+            </article>
         </main>
         <Footer />
     </div>

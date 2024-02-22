@@ -1,38 +1,44 @@
 @import "../../styles/variables";
 
 header {
-  .current {
-    // border-bottom: 1px solid $primary-color;
-  }
+  .header-logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 
-  a {
-    &::after {
-      content: "";
+    height: 6rem;
+
+    font-size: 2.25rem;
+    font-weight: 900;
+
+    margin: 2rem 0;
+
+    & > img {
       display: flex;
-      clear: both;
+      height: 100%;
 
-      width: 100%;
-      height: 0.25rem;
-
-      margin-top: 0.5rem;
-    }
-
-    &.current::after {
-      border-radius: 100vw;
-      background-color: $primary-color;
+      margin-right: 0.5rem;
     }
   }
-  //   nav::after {
-  //     content: "";
-  //     display: flex;
-  //     clear: both;
 
-  //     width: 100%;
-  //     max-width: $md-width;
-  //     height: 0;
+  .page-list {
+    a {
+      &::after {
+        content: "";
+        display: flex;
+        clear: both;
 
-  //     margin: 0 auto;
+        width: 100%;
+        height: 0.25rem;
 
-  //     border-bottom: 1px solid $border-color;
-  //   }
+        margin-top: 0.5rem;
+      }
+
+      &.current::after {
+        border-radius: 100vw;
+        background-color: $primary-color;
+      }
+    }
+  }
 }
