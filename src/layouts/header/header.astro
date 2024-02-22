@@ -1,21 +1,24 @@
 ---
 import "./header.scss";
 
-const { category } = Astro.props;
+const { type } = Astro.props;
 
 ---
 
 <header>
     <nav>
         <div class="flex w-full flex-col items-center justify-center py-3">
-            <div class="flex w-full h-20 items-center justify-center text-white bg-primary">
-                <a href="#" class="flex text-4xl font-bold">MimiChan</a>
+            <div class="flex w-full h-20 items-center justify-center bg-primary">
+                <a href="#" class="header-logo">
+                    <img src="/header.png" alt="" class="image">
+                    みみの小屋
+                </a>
             </div>
-            <ul class="flex w-full items-center justify-center space-x-4 bg-secondary">
-                <li class="flex"><a href="/" class={`${category === "top" && "text-white font-bold current"} px-3 py-2`} aria-current={`${category === "top" && "page"}`}>Top</a></li>
-                <li class="flex"><a href="/blog" class={`${category === "blog" && "text-white font-bold current"} px-3 py-2`} aria-current={`${category === "blog" && "page"}`}>Blog</a></li>
-                <li class="flex"><a href="/works" class={`${category === "works" && "text-white font-bold current"} px-3 py-2`} aria-current={`${category === "works" && "page"}`}>Works</a></li>
-                <li class="flex"><a href="/env" class={`${category === "env"&& "text-white font-bold current"} px-3 py-2`} aria-current={`${category === "env" && "page"}`}>Env</a></li>
+            <ul class="page-list flex w-full items-center justify-center space-x-4 bg-secondary">
+                <li class="flex"><a href="/" class={`${type === "top" && "font-bold current"} px-3 py-2`} aria-current={`${type === "top" && "page"}`}>Top</a></li>
+                <li class="flex"><a href="/about" class={`${type === "about" && "font-bold current"} px-3 py-2`} aria-current={`${type === "about" && "page"}`}>About</a></li>
+                <li class="flex"><a href="/blogs" class={`${type === "blogs" && "font-bold current"} px-3 py-2`} aria-current={`${type === "blogs" && "page"}`}>Blogs</a></li>
+                <li class="flex"><a href="/works" class={`${type === "works" && "font-bold current"} px-3 py-2`} aria-current={`${type === "works" && "page"}`}>Works</a></li>
             </ul>
         </div>
     </nav>

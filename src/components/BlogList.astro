@@ -1,0 +1,20 @@
+---
+
+let posts;
+try{
+    posts = await Astro.glob("/src/pages/posts/*.mdx");
+}catch{
+    posts = null;
+}
+
+---
+
+<ul>
+            {
+                (posts !== null) ? (
+                posts.map(post => {
+                    return <li><a href={post.url}>{post.frontmatter.title}</a></li>
+                })
+                ) : ("まだ記事はありません")
+            }
+        </ul>
